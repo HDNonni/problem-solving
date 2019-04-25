@@ -317,7 +317,10 @@ function calculateStdDev(dataSet) {
 }
 console.log('The standard Deviation is: ' + calculateStdDev([3, 5, 7, 9]))
 
+
+//functions to calculate how many days old
 // find leap years
+//TODO: refactor and set up html inputs
 
 function isLeapYear(year) {
     if (year % 4 == 0) {
@@ -384,13 +387,17 @@ console.log("days left in year: " + totalDaysToEndOfYear(12, 29, 2000));
 function getPreviousDays(month, day, year) {
     let daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let previousDays = 0;
+    if (isLeapYear(year)) {
+        daysInMonths[1] = 29
+        console.log("this is leap year test:" + isLeapYear(year))
+    }
     // given month, day and year get previous days to beginning of year
     //copied to modify from above
     //set currentMonth to 0 and increment to month
     for (var currentMonth = 0; currentMonth < month -1; currentMonth++) {
         console.log("this is current Month: " + currentMonth)
         //add previousDays t
-        previousDays  += daysInMonths[month] ;
+        previousDays  += daysInMonths[currentMonth] ;
         console.log(daysInMonths[currentMonth] );
         console.log("this is previous days "+ previousDays);
         
@@ -398,6 +405,7 @@ function getPreviousDays(month, day, year) {
     var actualPreviousDays = previousDays + day;
     return actualPreviousDays;
 
-
 }
-console.log("Test previous days: " + getPreviousDays(3, 21, 2000));
+console.log("Test previous days: " + getPreviousDays(8, 21, 2015));
+
+
