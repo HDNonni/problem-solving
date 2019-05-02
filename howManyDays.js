@@ -20,7 +20,7 @@ function ageInDays(current_year, birth_year) {
     //loop through array to filter leap years and calculate days
     // accumulator pattern
     var totalDays = 0;
-    for (var year = birth_year; year < current_year; year++) {
+    for (var year = birth_year; year <= current_year; year++) {
         // console.log(year);
         // console.log(birth_year)
         // console.log(current_year)
@@ -53,7 +53,7 @@ function totalDaysToEndOfYear(month, day, year) {
         totalDays = totalDays + daysInMonths[currentMonth]
         console.log(daysInMonths[currentMonth]);
     }
-    var remainingDays = totalDays - day;
+    var remainingDays = totalDays - day + 1 ;
     //????
     console.log("this is days in months:" + daysInMonths);
     console.log("days remaining 2: " + totalDays)
@@ -106,5 +106,5 @@ function howManyDaysOld(currentMonth, currentDay, currentYear, birthMonth, birth
     document.getElementById("answer").innerHTML = "You are " + daysOld + " days old today!"
     return daysOld;
 }
-console.log("This is how many days old , hopefully!: " + howManyDaysOld(5, 1, 2019, 1, 8, 2000));
+console.log("This is how many days old , hopefully!: " + howManyDaysOld(1, 30, 2019, 1, 1, 2000));
 
