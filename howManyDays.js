@@ -103,8 +103,50 @@ function howManyDaysOld(currentMonth, currentDay, currentYear, birthMonth, birth
     var yearTotals = ageInDays(currentYear - 1, birthYear + 1);
     var daysOld = yearTotals + dayEndTotal + dayPrevious;
 
-    document.getElementById("answer").innerHTML = "You are " + daysOld + " days old today!"
+    //document.getElementById("answer").innerHTML = "You are " + daysOld + " days old today!"
     return daysOld;
 }
-console.log("This is how many days old , hopefully!: " + howManyDaysOld(1, 30, 2019, 1, 1, 2000));
+console.log("This is how many days old , hopefully!: " + howManyDaysOld(5, 13, 2019, 5, 06, 2010));
 
+
+//TODO: 
+    //add click handler 
+    //get dates from inputs (2 dates)
+    //get value of input (js date object)
+    //get month day and year from js object
+    //call function
+
+document.getElementById("button").addEventListener("click", function(){
+    
+    let birthdayValue = document.getElementById("birthday").value
+    console.log("this is Birthday Value " , birthdayValue.split("-"));
+
+    //assign to a variable and extract month day and years 
+    let birthdayDate = birthdayValue.split("-");
+    console.log("the birthday date:",birthdayDate)
+
+    let bdMonth = birthdayDate[1];
+    console.log("birthday  month is:", bdMonth)
+    let bdDay = birthdayDate[2];
+    console.log("birthday  day is:", bdDay)
+    let bdYear = birthdayDate[0];
+    console.log("birthday  year is:", bdYear)
+    console.log(bdMonth,bdDay,bdYear);
+
+    //current day
+    let todayValue = document.getElementById("today").value
+    console.log("this is today Value " , todayValue.split("-"));
+
+    //assign to a variable and extract month day and years 
+    let todayDate = todayValue.split("-");
+    console.log("the today date:",todayDate)
+
+    let nowMonth = todayDate[1];
+    console.log("today  month is:", nowMonth)
+    let nowDay = todayDate[2];
+    console.log("today  day is:", nowDay)
+    let nowYear = todayDate[0];
+    console.log("today year is:", nowYear)
+    console.log(nowMonth,nowDay,nowYear);
+    document.getElementById("answer").innerHTML = "you are " + howManyDaysOld(nowMonth,nowDay,nowYear,bdMonth,bdDay,bdYear)+ "days old!";
+})
