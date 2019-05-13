@@ -1,0 +1,47 @@
+body, html{
+    box-sizing: border-box;
+    background-color: rgb(246, 246, 246)
+}
+h1{
+    text-align: center;
+    color:purple;
+    text-decoration: underline;
+}
+#box1{
+    border:1px solid black;
+    text-align: center;
+    font-size:35px;
+    background-color: rgb(204, 197, 228);
+    border-radius: 5px;
+    margin:50px 0;
+    padding:10px 0;
+}
+input{
+    font-size: 20px;
+    border-radius:5px;
+    background-color: azure
+}
+#box2{
+    border:1px solid black;
+    text-align: center;
+    font-size:35px;
+    background-color: rgb(204, 197, 228);
+    border-radius: 5px;
+    margin:30px 0;
+    padding:10px 0;
+}
+#button{
+    font-size: 30px;
+    padding:15px 20px;
+    font-variant: small-caps;
+    font-weight:bold;
+    margin-bottom: 30px;
+    margin-left:260px;
+}
+#answer{
+    font-size:40px;
+    font-weight:bold;
+    font-style: italic;
+    margin-left:30px;
+    
+}

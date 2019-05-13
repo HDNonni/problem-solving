@@ -125,11 +125,11 @@ document.getElementById("button").addEventListener("click", function(){
     let birthdayDate = birthdayValue.split("-");
     console.log("the birthday date:",birthdayDate)
 
-    let bdMonth = birthdayDate[1];
+    let bdMonth = parseInt(birthdayDate[1]);
     console.log("birthday  month is:", bdMonth)
-    let bdDay = birthdayDate[2];
+    let bdDay = parseInt(birthdayDate[2]);
     console.log("birthday  day is:", bdDay)
-    let bdYear = birthdayDate[0];
+    let bdYear =parseInt(birthdayDate[0]);
     console.log("birthday  year is:", bdYear)
     console.log(bdMonth,bdDay,bdYear);
 
@@ -141,12 +141,13 @@ document.getElementById("button").addEventListener("click", function(){
     let todayDate = todayValue.split("-");
     console.log("the today date:",todayDate)
 
-    let nowMonth = todayDate[1];
+    let nowMonth = parseInt(todayDate[1]);
     console.log("today  month is:", nowMonth)
-    let nowDay = todayDate[2];
+    let nowDay = parseInt(todayDate[2]);
     console.log("today  day is:", nowDay)
-    let nowYear = todayDate[0];
+    let nowYear = parseInt(todayDate[0]);
     console.log("today year is:", nowYear)
     console.log(nowMonth,nowDay,nowYear);
-    document.getElementById("answer").innerHTML = "you are " + howManyDaysOld(nowMonth,nowDay,nowYear,bdMonth,bdDay,bdYear)+ "days old!";
+    document.getElementById("answer").innerHTML = "You are " + howManyDaysOld(nowMonth,nowDay,nowYear,bdMonth,bdDay,bdYear)+ " days old!";
+    console.log(howManyDaysOld(nowMonth))
 })
